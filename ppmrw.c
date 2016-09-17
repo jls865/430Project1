@@ -24,9 +24,16 @@ void write_file(char* destination, ppm_data data);
 
 
 int main(){
+char* filename;
+char* name;
+printf("what file would you like to convert?");
+scanf("%s", filename);
 ppm_data data;
-ppm_data* p3_data;
-read_file("P3.ppm", p3_data);
+ppm_data* p_data;
+read_file(filename, p_data);
+
+printf(" What do you want the PPM File Name to be ?");
+scanf("%s", name);
 write_file("p3wrote.ppm", data);
 }
 
