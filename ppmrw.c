@@ -8,7 +8,7 @@ typedef struct{
 }pixel;
 //Struct that holds the ppm files data
 typedef struct{
-	unsigned char magic_num;
+	char magic_num;
 	int width;
 	int height;
 	int max_val;
@@ -23,13 +23,8 @@ void read_file(char* file_name, ppm_data* pdata);
 void write_file(char* destination, ppm_data data);
 
 
-//
 int main(){
 ppm_data data;
-strcpy(&data.magic_num, "P3");
-data.width = 2;
-data.height= 2;
-data.max_val = 255;
 ppm_data* p3_data;
 read_file("P3.ppm", p3_data);
 write_file("p3wrote.ppm", data);
